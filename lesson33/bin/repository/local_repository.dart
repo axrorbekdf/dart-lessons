@@ -1,11 +1,11 @@
 import 'dart:convert';
 import 'dart:io';
-
 import '../model/post_model.dart';
 
-class RemoteRepository {
+class LocalRepository {
 
   File filePost = File("local_db/result.txt");
+  
   List<PostModel>? getPosts() {
     if (filePost.existsSync()) {
       String data = filePost.readAsStringSync();
@@ -14,9 +14,9 @@ class RemoteRepository {
       for (var element in body) {
         result.add(
           PostModel(
-            element["postId"],
+            element["userId"],
             element["id"],
-            element["name"],
+            element["title"],
             element["body"],
           ),
         );
