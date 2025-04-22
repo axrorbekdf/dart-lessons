@@ -14,7 +14,9 @@ class PostProvider {
     List<PostModel>? result;
     result = await remoteRepository.getPosts();
     if (result != null) {
-      localRepository.setPost(jsonEncode(result));
+      String json =
+          jsonEncode(result.map((i) => i.toJson()).toList()).toString();
+      localRepository.setPost(json);
     } else {
       result = localRepository.getPosts();
     }

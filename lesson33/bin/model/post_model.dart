@@ -10,4 +10,13 @@ class PostModel {
   String toString() {
     return "User($userId, $id, $title, $body)\n";
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      "userId": this.userId,
+      "id": this.id,
+      "title": this.title,
+      "body": this.body,
+    };
+  }
 }
