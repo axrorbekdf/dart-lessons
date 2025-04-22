@@ -3,9 +3,8 @@ import 'dart:io';
 import '../model/post_model.dart';
 
 class LocalRepository {
-
   File filePost = File("bin/local_db/result.txt");
-  
+
   List<PostModel>? getPosts() {
     if (filePost.existsSync()) {
       String data = filePost.readAsStringSync();
@@ -25,5 +24,9 @@ class LocalRepository {
     } else {
       return null;
     }
+  }
+
+  void setPost(String data) {
+    filePost.writeAsStringSync(data);
   }
 }

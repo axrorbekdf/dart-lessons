@@ -3,7 +3,6 @@ import '../model/post_model.dart';
 import 'package:http/http.dart' as http;
 
 class RemoteRepository {
-
   Future<List<PostModel>?> getPosts() async {
     final url = Uri.parse('https://jsonplaceholder.typicode.com/comments');
 
@@ -32,4 +31,3 @@ class RemoteRepository {
     }
   }
 }
-
