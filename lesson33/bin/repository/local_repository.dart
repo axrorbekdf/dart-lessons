@@ -4,7 +4,7 @@ import '../model/post_model.dart';
 
 class LocalRepository {
 
-  File filePost = File("local_db/result.txt");
+  File filePost = File("bin/local_db/result.txt");
   
   List<PostModel>? getPosts() {
     if (filePost.existsSync()) {

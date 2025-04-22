@@ -4,12 +4,12 @@ import 'repository/remote_repository.dart';
 
 void main(List<String> args) async {
 
-    RemoteRepository response = RemoteRepository();
-    List<PostModel>? posts = await response.getPosts();
-    print(posts);
+    RemoteRepository remoteRepository = RemoteRepository();
+    List<PostModel>? posts_remote = await remoteRepository.getPosts();
+    print(posts_remote);
 
-    // LocalRepository localRepository = LocalRepository();
-    // List<PostModel>? response = localRepository.getPosts();
-    // print(response);
+    LocalRepository localRepository = LocalRepository();
+    List<PostModel>? posts_local = localRepository.getPosts();
+    print(posts_local);
 
 }
