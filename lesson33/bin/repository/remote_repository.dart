@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 class RemoteRepository {
   Future<List<PostModel>?> getPosts() async {
-    final url = Uri.parse('https://jsonplaceholder.typicode.com/comments');
+    final url = Uri.parse('https://jsonplaceholder.typicode.com/posts');
 
     try {
       final response = await http.get(url);
@@ -13,9 +13,9 @@ class RemoteRepository {
         List body = jsonDecode(response.body);
         List<PostModel> result = body.map((element) {
           return PostModel(
-            element["postId"],
+            element["userId"],
             element["id"],
-            element["name"],
+            element["title"],
             element["body"],
           );
         }).toList();
